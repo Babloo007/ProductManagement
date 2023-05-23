@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,11 +24,14 @@ public class Main {
         service.addProduct(new Product("Lenovo Mouse","Mouse" ,"Black Drawer" ,2022 ));
         service.addProduct(new Product("BlackBeast","Computer" ,"White Table" ,2022 ));
 
-//        List<Product> products = service.getAllProducts();
-//
+        List<Product> products = service.getAllProducts();
+
 //        for(Product p : products) {
 //            System.out.println(p);
 //        }
+
+//        Stream<Product> stm = products.stream();
+//        stm.forEach(System.out::println);
 
 //        System.out.println("###########################################################");
 //        System.out.println("a particular product by name");
@@ -43,6 +47,9 @@ public class Main {
 //            System.out.println(p);
 //        }
 
+//        Stream<Product> stm = prods.stream();
+//        stm.forEach(System.out::println);
+
 //        System.out.println("###########################################################");
 //        System.out.println("a particular products by place");
 //
@@ -51,13 +58,18 @@ public class Main {
 //            System.out.println(p);
 //        }
 
-        System.out.println("###########################################################");
-        System.out.println("a particular products out of warranty");
+//        Stream<Product> stm = prods.stream();
+//        stm.forEach(System.out::println);
 
+//        System.out.println("###########################################################");
+//        System.out.println("a particular products out of warranty");
+//
         List<Product> prods = service.getProductsOutOfWarranty();
-        for(Product p : prods){
-            System.out.println(p);
-        }
+//        for(Product p : prods){
+//            System.out.println(p);
+//        }
 
+        Stream<Product> stm = prods.stream();
+        stm.forEach(System.out::println);
     }
 }
